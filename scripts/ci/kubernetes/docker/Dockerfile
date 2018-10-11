@@ -42,6 +42,11 @@ RUN pip install -U setuptools && \
     pip install kubernetes && \
     pip install cryptography && \
     pip install psycopg2-binary==2.7.4  # I had issues with older versions of psycopg2, just a warning
+    
+## mapr specific
+RUN  yum install -y http://archive.mapr.com/releases/v6.0.1/redhat/mapr-librdkafka-0.11.3.201803231414-1.noarch.rpm
+RUN  yum install -y http://archive.mapr.com/releases/v6.0.1/redhat/mapr-client-6.0.1.20180404222005.GA-1.x86_64.rpm
+
 
 # install airflow
 COPY airflow.tar.gz /tmp/airflow.tar.gz
